@@ -9,10 +9,7 @@ export async function middleware(request: NextRequest) {
   });
 
   const isAuthPage = request.nextUrl.pathname.startsWith('/login');
-  const isProtectedRoute =
-    request.nextUrl.pathname.startsWith('/dashboard') ||
-    request.nextUrl.pathname.startsWith('/analyze') ||
-    request.nextUrl.pathname.startsWith('/history');
+  const isProtectedRoute = request.nextUrl.pathname.startsWith('/dashboard');
 
   if (isProtectedRoute && !token) {
     return NextResponse.redirect(new URL('/login', request.url));
@@ -26,5 +23,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/analyze/:path*', '/history/:path*', '/login'],
+  matcher: ['/dashboard/:path*', '/login'],
 };
