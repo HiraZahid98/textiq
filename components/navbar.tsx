@@ -33,10 +33,13 @@ export function Navbar() {
 
           {/* Sign In Button */}
           <div className="flex items-center gap-4">
-            <button className="hidden sm:block px-6 py-2 text-slate-300 hover:text-foreground transition">
+            <Link
+              href="/login"
+              className="hidden sm:block px-6 py-2 text-slate-300 hover:text-foreground transition"
+            >
               Sign In
-            </button>
-            <Link href="#" className="glow-button">
+            </Link>
+            <Link href="/login" className="glow-button">
               Start Free
             </Link>
           </div>
@@ -64,7 +67,15 @@ export function Navbar() {
             <Link href="#" className="block text-slate-400 hover:text-foreground transition">
               Pricing
             </Link>
-            <button className="block text-slate-300 hover:text-foreground transition">Sign In</button>
+            <Link
+              href="/login"
+              className="block text-slate-300 hover:text-foreground transition"
+            >
+              Sign In
+            </Link>
+            <Link href="/login" className="block text-slate-300 hover:text-foreground transition">
+              Start Free
+            </Link>
           </div>
         )}
       </div>
